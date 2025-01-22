@@ -182,6 +182,7 @@ public class LinkedList {
 	 *        the node that will be removed from this list
 	 */
 	public void remove(Node node) {
+		/*
 		int index = indexOf(node.block);
 		if (index == -1) {
 			System.out.println("Node does not exist in the list");
@@ -194,6 +195,22 @@ public class LinkedList {
 			Node prev = getNode(index - 1);
 			Node current = (index == size) ? null : prev.next.next;
 			prev.next = current;
+			size--;
+		}
+		*/
+		int index = indexOf(node.block);
+		if (index == -1) {
+			System.out.println("Node does not exist in the list");
+		}
+		if (node == this.first) {
+			this.first = this.first.next;
+		}
+		else {
+			Node prev = first;
+			while (prev.next != node) {
+				prev = prev.next;
+			}
+			prev.next = node.next;
 			size--;
 		}
 	}
