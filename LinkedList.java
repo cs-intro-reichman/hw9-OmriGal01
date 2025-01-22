@@ -210,25 +210,6 @@ public class LinkedList {
 			prev.next = current.next;
 			this.size--;
 		}
-
-
-		/*
-		int index = indexOf(node.block);
-		if (index == -1) {
-			System.out.println("Node does not exist in the list");
-			return;
-		}
-		else if (index == 0) {
-			this.first = this.first.next;
-			size--;
-		}
-		else {
-			Node prev = getNode(index - 1);
-			Node current = (index == size) ? null : prev.next.next;
-			prev.next = current;
-			size--;
-		}
-		*/
 	}
 
 	/**
@@ -264,11 +245,11 @@ public class LinkedList {
 		int index = indexOf(block);
 		if (index == -1) {
 			throw new IllegalArgumentException(
-					"Given memory block is not in this list");
+					"index must be between 0 and size");
 		}
 
 		this.remove(index);
-	}		
+	}
 
 	/**
 	 * Returns an iterator over this list, starting with the first element.
