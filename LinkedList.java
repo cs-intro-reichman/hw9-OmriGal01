@@ -197,10 +197,12 @@ public class LinkedList {
 			return;
 		} 
 		if (prev == null) { //Removes first element
+			if (current == last) last = last.next;
 			this.first = this.first.next;
 			this.size--;
 		}
 		else {
+			if (current == last) last = last.next;
 			prev.next = current.next;
 			this.size--;
 		}
