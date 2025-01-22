@@ -17,6 +17,30 @@ public class LinkedList {
 	}
 	
 	/**
+	 * Gets the first node of the list
+	 * @return The first node of the list.
+	 */		
+	public Node getFirst() {
+		return this.first;
+	}
+
+	/**
+	 * Gets the last node of the list
+	 * @return The last node of the list.
+	 */		
+	public Node getLast() {
+		return this.last;
+	}
+	
+	/**
+	 * Gets the current size of the list
+	 * @return The size of the list.
+	 */		
+	public int getSize() {
+		return this.size;
+	}
+	
+	/**
 	 * Gets the node located at the given index in this list. 
 	 * 
 	 * @param index
@@ -128,7 +152,7 @@ public class LinkedList {
 	public MemoryBlock getBlock(int index) {
 		Node n = getNode(index);
 		return n.block;
-	}	
+	}		
 
 	/**
 	 * Gets the index of the node pointing to the given memory block.
@@ -210,7 +234,7 @@ public class LinkedList {
 		}
 
 		this.remove(index);
-	}	
+	}		
 
 	/**
 	 * Returns an iterator over this list, starting with the first element.
