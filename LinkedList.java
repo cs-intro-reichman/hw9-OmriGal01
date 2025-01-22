@@ -182,10 +182,29 @@ public class LinkedList {
 	 *        the node that will be removed from this list
 	 */
 	public void remove(Node node) {
+		Node prev = null;
+		Node current = first;
+		while (current != null && current != node) {
+			prev = current;
+			current = current.next;
+		}
+		if (current == null) { //Node is not in the list
+			System.out.println("Node does not exist in the list");
+			return;
+		} 
+		if (prev == null) { //Removes first element
+			this.first = this.first.next;
+		}
+		else {
+			prev.next = current.next;
+		}
+		size--;
+
 		/*
 		int index = indexOf(node.block);
 		if (index == -1) {
 			System.out.println("Node does not exist in the list");
+			return;
 		}
 		else if (index == 0) {
 			this.first = this.first.next;
@@ -198,21 +217,6 @@ public class LinkedList {
 			size--;
 		}
 		*/
-		int index = indexOf(node.block);
-		if (index == -1) {
-			System.out.println("Node does not exist in the list");
-		}
-		if (node == this.first) {
-			this.first = this.first.next;
-		}
-		else {
-			Node prev = first;
-			while (prev.next != node) {
-				prev = prev.next;
-			}
-			prev.next = node.next;
-			size--;
-		}
 	}
 
 	/**
