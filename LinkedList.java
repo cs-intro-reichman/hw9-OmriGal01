@@ -195,14 +195,18 @@ public class LinkedList {
 		if (current == null) { //Node is not in the list
 			System.out.println("Node does not exist in the list");
 			return;
-		} 
+		}
 		if (prev == null) { //Removes first element
 			if (current == last) last = last.next;
 			this.first = this.first.next;
 			this.size--;
 		}
+		else if (current == last) { //Removes last element
+			prev.next = null;
+			this.last = prev;
+			this.size--;
+		}
 		else {
-			if (current == last) last = last.next;
 			prev.next = current.next;
 			this.size--;
 		}
