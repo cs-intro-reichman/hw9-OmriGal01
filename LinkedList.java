@@ -225,14 +225,22 @@ public class LinkedList {
 					"index must be between 0 and size");
 		}
 		if (index == 0) {
-			if (this.first == this.last) this.last = this.last.next;
+			if (this.size == 1) this.last = null;
 			this.first = this.first.next;
+			this.size--;
+		}
+		else if (index == size - 1) {
+			Node prev = getNode(index - 1);
+			this.last = prev;
+			prev.next = null;
+			this.size--;
 		}
 		else {
 			Node prev = getNode(index - 1);
-			prev.next = (index == size - 1) ? null : prev.next.next;
+			prev.next = prev.next.next;
+			this.size--;
 		}
-		this.size--;
+
 	}
 
 	/**
