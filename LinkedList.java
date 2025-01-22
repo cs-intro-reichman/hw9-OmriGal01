@@ -82,7 +82,7 @@ public class LinkedList {
 	 *         if index is negative or greater than the list's size
 	 */
 	public void add(int index, MemoryBlock block) {
-		if (index < 0 || (index > size && size > 0)) {
+		if (index < 0 || index > size) {
 			throw new IllegalArgumentException(
 					"index must be between 0 and size");
 		}
@@ -101,8 +101,9 @@ public class LinkedList {
 			Node add = new Node(block);
 			add.next = current.next;
 			current.next = add;
+			this.size++;
 		}
-		this.size++;
+		
 	}
 
 	/**
