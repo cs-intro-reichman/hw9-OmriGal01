@@ -182,6 +182,10 @@ public class LinkedList {
 	 *        the node that will be removed from this list
 	 */
 	public void remove(Node node) {
+		if (node == null) {
+			throw new NullPointerException(
+					"");
+		}
 		Node prev = null;
 		Node current = first;
 		while (current != null && current != node) {
@@ -194,11 +198,13 @@ public class LinkedList {
 		} 
 		if (prev == null) { //Removes first element
 			this.first = this.first.next;
+			this.size--;
 		}
 		else {
 			prev.next = current.next;
+			this.size--;
 		}
-		size--;
+
 
 		/*
 		int index = indexOf(node.block);
