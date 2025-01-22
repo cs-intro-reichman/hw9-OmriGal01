@@ -225,6 +225,7 @@ public class LinkedList {
 					"index must be between 0 and size");
 		}
 		if (index == 0) {
+			if (this.first == this.last) this.last = this.last.next;
 			this.first = this.first.next;
 		}
 		else {
