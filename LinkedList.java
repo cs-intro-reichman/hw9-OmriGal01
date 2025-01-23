@@ -270,14 +270,14 @@ public class LinkedList {
 	/**
 	 * A textual representation of this list, for debugging.
 	 */
-	public String toString() {
-		String res = "[";
+	public String toString() { //"(20 , 80)\n(0 , 20)\n" 
+		String res = "";
 		Node current = first;
-		while (current != null) {
-			res += " " + current.toString();
+		while (current.next != null) {
+			res += current.toString() + " ";
 			current = current.next;
 		}
-		res += " ]";
+		res += current.toString();
 		return res;
 	}
 }

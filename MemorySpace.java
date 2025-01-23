@@ -102,7 +102,7 @@ public class MemorySpace {
 	 * for debugging purposes.
 	 */
 	public String toString() {
-		return freeList.toString() + "\n" + allocatedList.toString();		
+		return freeList.toString() + "\n" + allocatedList.toString() + "\n";		//"(20 , 80)\n(0 , 20)\n"
 	}
 	
 	/**
