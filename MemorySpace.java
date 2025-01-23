@@ -61,13 +61,17 @@ public class MemorySpace {
 		ListIterator itr = freeList.iterator();
 		while (itr != null) {
 			MemoryBlock m = itr.next();
-			if (m == null) continue;
-			if (m.length >= length) {
+			if (m.length > length) {
 				MemoryBlock newBlock = new MemoryBlock(m.baseAddress, length);
 				allocatedList.addLast(newBlock);
 				m.baseAddress = m.baseAddress + length;
 				m.length = m.length - length;
 				return newBlock.baseAddress;
+			}
+			else if (m.length == length) {
+				freeList.remove(m);
+				allocatedList.addLast(m);
+				return m.baseAddress;
 			}
 		}
 		return -1;
