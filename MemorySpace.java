@@ -125,6 +125,8 @@ public class MemorySpace {
 					freeItr.current.block.length += m.length;
 					freeList.remove(m);
 					search = freeItr.current.block.baseAddress + freeItr.current.block.length;
+					defrag();
+					return;
 				}
 			}
 			freeItr.next();
