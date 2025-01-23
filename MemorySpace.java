@@ -61,6 +61,7 @@ public class MemorySpace {
 		ListIterator itr = freeList.iterator();
 		while (itr != null) {
 			MemoryBlock m = itr.next();
+			if (m == null) continue;
 			if (m.length > length) {
 				MemoryBlock newBlock = new MemoryBlock(m.baseAddress, length);
 				allocatedList.addLast(newBlock);
