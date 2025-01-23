@@ -6,19 +6,19 @@ public class MyTester {
         System.out.println(memory.toString());
     }
         /*
-    private static void testInitialization() {
-        MemorySpace memory = new MemorySpace(100);
-        String expected = "(0 , 100)\n";
-        assertString(expected, memory.toString(), "Initialization");
-    }
-
-    private static void testSimpleAllocation() {
-        MemorySpace memory = new MemorySpace(100);
-        int address = memory.malloc(20);
-        assertEqual(0, address, "Simple allocation address");
-
-        String expected = "(20 , 80)\n(0 , 20)\n";
-        assertString(expected, memory.toString(), "Simple allocation state");
+    private boolean mallocTest1() {
+        MemorySpace memorySpace = new MemorySpace(100);
+        String expectedText = "(20 , 80) \n(0 , 20) ";
+        String expected = "true";
+        String actual = "";
+        try {
+            int address = memorySpace.malloc(20);
+            actual += (address == 0 && memorySpace.toString().equals(expectedText));
+            
+        } catch (Exception e) {
+            actual = TesterMessagesEnum.ERROR + e.getMessage();
+        }
+        return this.tester.test("Malloc a block of memory", expected, actual);
     }
         */
 }
