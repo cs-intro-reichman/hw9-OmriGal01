@@ -1,6 +1,8 @@
 public class MyTester {
     public static void main (String[] args) {
         MemorySpace memory = new MemorySpace(100);
+        int address = memory.malloc(20);
+        System.out.println(address);
         System.out.println(memory.toString());
     }
         /*
