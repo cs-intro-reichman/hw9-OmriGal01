@@ -274,11 +274,10 @@ public class LinkedList {
 		if (this.first == null) return "";
 		String res = "";
 		Node current = first;
-		while (current.next != null) {
+		while (current != null) {
 			res += current.toString() + " ";
 			current = current.next;
 		}
-		res += current.toString();
 		return res;
 	}
 }
