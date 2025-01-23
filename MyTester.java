@@ -2,10 +2,16 @@ public class MyTester {
     public static void main (String[] args) {
         MemorySpace memorySpace = new MemorySpace(100);
         int address1 = memorySpace.malloc(10);
+        System.out.println(address1);
         int address2 = memorySpace.malloc(10);
+        System.out.println(address2);
         int address3 = memorySpace.malloc(10);
+        System.out.println(address3);
         int address4 = memorySpace.malloc(30);
+        System.out.println(address4);
+        System.out.println(memorySpace.toString() + "!");
         int address5 = memorySpace.malloc(50);
+        System.out.println(address5);
         System.out.println(address1 + " " + address2 + " " + address3 + " " + address4 + " " + address5);
         System.out.println(memorySpace.toString() + "!");
     }
