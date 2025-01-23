@@ -122,7 +122,7 @@ public class MemorySpace {
 			while (scndItr.current != null) {
 				MemoryBlock m = scndItr.next();
 				if (m.baseAddress == search) {
-					freeItr.current.block.length += search;
+					freeItr.current.block.length += m.length;
 					freeList.remove(m);
 					search = freeItr.current.block.baseAddress + freeItr.current.block.length;
 				}
