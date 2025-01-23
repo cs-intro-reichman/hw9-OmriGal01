@@ -270,7 +270,8 @@ public class LinkedList {
 	/**
 	 * A textual representation of this list, for debugging.
 	 */
-	public String toString() { //"(20 , 80)\n(0 , 20)\n" 
+	public String toString() { //"(20 , 80)\n(0 , 20)\n"
+		if (this.first == null) return "";
 		String res = "";
 		Node current = first;
 		while (current.next != null) {
